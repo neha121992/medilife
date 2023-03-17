@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpService } from 'src/app/core/services/http.service';
 
@@ -12,12 +12,13 @@ export class TopDealsComponent {
   constructor(private http:HttpService){
 
   }
+
   ngOnInit(){
     this.getTopDeals();
   }
 
   getTopDeals(){
-    this.http.getDataFromServer("top-deals").subscribe((el:any)=>{
+    this.http.getDataFromServer("top-deals","","").subscribe((el:any)=>{
     if(el && el.length >0){
       this.topDeals = el;
       console.log(this.topDeals);

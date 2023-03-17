@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { environment } from 'environments/environment';
 
@@ -14,8 +14,15 @@ export class HttpService implements OnInit{
   }
   
 
-  getDataFromServer(endpoint:string){
-    const url = this.baseUrl+endpoint;
-    return this.http.get(url,{'headers':this.httpHeaders});
+  // getDataFromServer(endpoint:string, param:string="",reqP: any ={}){
+    // const url = this.baseUrl+endpoint;
+    // let hhh = new HttpParams().set("pincode",reqP);
+    // let qqq = new HttpParams().set("drugCode",reqP);
+    // return this.http.get(url,{'headers':this.httpHeaders, params: hhh, });
+  // }
+  getDataFromServer(endpoint:string,key:string,value:any){
+    const url = this.baseUrl + endpoint;
+    let hhh = new HttpParams().set(key, value);
+    return this.http.get(url,{'headers':this.httpHeaders, params: hhh });
   }
 }

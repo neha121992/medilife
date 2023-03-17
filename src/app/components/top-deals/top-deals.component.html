@@ -4,7 +4,7 @@
     <ng-container *ngFor="let slide of topDeals">
       <ng-template carouselSlide [id]="slide.id">
         <div class="card shadow">
-          <img [src]="slide.productImageSlug[0]" class="card-img-top" alt="..." height="200" width="200">
+          <img [src]="slide.productImageSlug[0]" class="card-img-top" alt="..." height="200" width="200" [routerLink]="['/view-product-details', slide.drugCode]">
           <div class="card-body" style="height: 162px;">
             <h5 class="card-title card-description" [title]="slide.description">Card title{{slide.description}}</h5>
             <p class="card-text text-muted">{{slide.type}}</p>

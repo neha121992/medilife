@@ -1,8 +1,8 @@
-
 <div class="container-fluid p-4 bg-primary text-decoration-none">
     <div class="row">
         <div class="col-md-4 labadd">
-            <img src="https://www.medibuddy.in/assets/icons/location/labs_location_white.svg" alt="">        </div>
+            <img src="https://www.medibuddy.in/assets/icons/location/labs_location_white.svg" alt="">
+        </div>
 
         <div class="col-md-4">
             <h5>Dairy Circle</h5>
@@ -11,35 +11,75 @@
         <div class="col-md-4">
             <div class="container">
                 <div class="input-group input-group-lg rounded-3">
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Search for lab test, scan & health checkup packages">
-                    <span class="input-group-text search-heading bg-body text-primary" id="inputGroup-sizing-lg"><i class="bi bi-search ms-3"></i> &nbsp; Search</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-lg"
+                        placeholder="Search for lab test, scan & health checkup packages">
+                    <span class="input-group-text search-heading bg-body text-primary" id="inputGroup-sizing-lg"><i
+                            class="bi bi-search ms-3"></i> &nbsp; Search</span>
                 </div>
             </div>
         </div>
     </div>
-   
+
 </div>
 
 <div class="container home-container cursor mt-2 w-50">
     <div class="d-flex flex-row justify-content-around mb-2">
         <div class="p-2">
             <a>
-                <img src="https://www.medibuddy.in/assets/icons/corpLabs/section/labtests.svg" alt="" width="90" height="60">
-                <h6 class="text-center mt-1">Book Lab Tests</h6>
+                <img src="https://www.medibuddy.in/assets/icons/corpLabs/section/labtests.svg" alt="" width="90"
+                    height="60">
+                <h6 class="text-center mt-1">Book <br> Lab Tests</h6>
             </a>
         </div>
         <div class="p-2">
             <a>
-                <img src="https://www.medibuddy.in/assets/icons/corpLabs/section/popular-hc.svg" alt="" width="90" height="60">
-                <h6 class="text-center mt-1">Popular Health Checkups</h6>
+                <img src="https://www.medibuddy.in/assets/icons/corpLabs/section/popular-hc.svg" alt="" width="90"
+                    height="60">
+                <h6 class="text-center mt-1">Popular Health <br> Checkups</h6>
             </a>
         </div>
         <div class="p-2">
             <a>
-                <img src="https://www.medibuddy.in/assets/icons/corpLabs/section/popular-lv.svg" alt="" width="90" height="60">
-                <h6 class="text-center mt-1">X-Rays Scan & MRI</h6>
+                <img src="https://www.medibuddy.in/assets/icons/corpLabs/section/popular-lv.svg" alt="" width="90"
+                    height="60">
+                <h6 class="text-center mt-1">X-Rays <br> Scan & MRI</h6>
             </a>
         </div>
     </div>
 </div>
 
+<div class="container mt-4">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+        <img src="https://www.medibuddy.in/assets/banners/diabetes.webp" alt="">
+    </ng-template>  
+    <ng-template carouselSlide>
+        <img src="https://www.medibuddy.in/assets/banners/vitamin-bone.webp" alt="">
+    </ng-template>  
+    <ng-template carouselSlide>
+        <img src="https://views.medibuddy.in/labs/HomeScreenBanners/web/womens-labs.png" alt="">
+    </ng-template>  
+    <ng-template carouselSlide>
+        <img src="https://www.medibuddy.in/assets/banners/platinum.webp" alt="">
+    </ng-template>  
+    <ng-template carouselSlide>
+        <img src="https://views.medibuddy.in/labs/HomeScreenBanners/web/womens-labs.png" alt="">
+    </ng-template>  
+  </owl-carousel-o>
+</div>
+
+<div class="container mt-4">
+<h5>Featured Health Check-up Packages</h5>
+<div class="d-flex justify-content-around flex-row bd-highlight mb-3 mt-4">
+    <p class="border p-2 text-center text-primary rounded-pill">Center Visit</p>
+    <p class="border p-2 text-center text-primary rounded-pill">Full Body Check Up</p>
+    <p class="border p-2 text-center text-primary rounded-pill">Diabetes</p>
+    <p class="border p-2 text-center text-primary rounded-pill">Heart</p>
+    <p class="border p-2 text-center text-primary rounded-pill">Cancer</p>
+    <p class="border p-2 text-center text-primary rounded-pill">Alcohol</p>
+    <p class="border p-2 text-center text-primary rounded-pill">Smokers</p>
+    <p class="border p-2 text-center text-primary rounded-pill">Vitamin</p>
+    <p class="border p-2 text-center text-primary rounded-pill">View More</p>
+  </div>
+</div>

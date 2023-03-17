@@ -13,6 +13,9 @@ import { LabtestHomeComponent } from './components/labtest-home/labtest-home.com
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { TopDealsByCategoryComponent } from './components/top-deals-by-category/top-deals-by-category.component';
+import { ViewProductDetailsComponent } from './components/view-product-details/view-product-details.component';
+import { TopDealHeaderComponent } from './components/top-deal-header/top-deal-header.component';
 
 
 
@@ -23,6 +26,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MedicineHomeComponent,
     TopDealsComponent,
     LabtestHomeComponent,
+    TopDealsByCategoryComponent,
+    ViewProductDetailsComponent,
+    TopDealHeaderComponent,
 
   ],
   imports: [
