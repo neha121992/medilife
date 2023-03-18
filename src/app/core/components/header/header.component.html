@@ -6,7 +6,29 @@
         </a>
         <div class="text-end me-5">
             <a class="text-decoration-none me-2">About-Us</a>
-            <a class="text-decoration-none ms-3">Login</a>
+            <a class="text-decoration-none ms-3 cursor" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
         </div>
     </div>
 </nav>
+
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModal">{{actionName === 'SignUp'? 'SignUp' : 'SignIn'}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <!-- <app-sign-in></app-sign-in> -->
+        <app-sign-in *ngIf="actionName === 'SignIn'"></app-sign-in>
+        <app-sign-up *ngIf="actionName === 'SignUp'"></app-sign-up>
+        <!-- <app-sign-up></app-sign-up> -->
+        </div>
+        <div class="d-grid gap-2 m-3">
+            <button class="btn btn-primary" type="button" *ngIf="actionName === 'SignUp'" (click)="changeAction('SignIn')">Sign In</button>
+            <button class="btn btn-primary" type="button" *ngIf="actionName === 'SignIn'" (click)="changeAction('SignUp')">Sign Up</button>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -25,4 +25,10 @@ export class HttpService implements OnInit{
     let hhh = new HttpParams().set(key, value);
     return this.http.get(url,{'headers':this.httpHeaders, params: hhh });
   }
+
+  authentication(endpoint: string, userName: string, password: string) {
+    const url = this.baseUrl + endpoint;
+    const httpQueryParam = new HttpParams().set("userName", userName).set("password", password);
+    return this.http.get(url,{'headers':this.httpHeaders, params: httpQueryParam });
+  }
 }

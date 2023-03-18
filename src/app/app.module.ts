@@ -11,7 +11,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TopDealsComponent } from './components/top-deals/top-deals.component';
 import { LabtestHomeComponent } from './components/labtest-home/labtest-home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { TopDealsByCategoryComponent } from './components/top-deals-by-category/top-deals-by-category.component';
 import { ViewProductDetailsComponent } from './components/view-product-details/view-product-details.component';
@@ -40,6 +40,7 @@ import { TopDealHeaderComponent } from './components/top-deal-header/top-deal-he
     HttpClientModule,
     FormsModule,
     MatSlideToggleModule,
+    ReactiveFormsModule
 
 
   ],

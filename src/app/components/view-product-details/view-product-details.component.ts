@@ -21,7 +21,7 @@ this.selectedDrugCode = this.route.snapshot.paramMap.get("drugCode");
   getProductDetailsByCategory(){
      
     const endpoint = "top-deals";
-    this.http.getDataFromServer(endpoint, "drugCode", this.selectedDrugCode).subscribe((el:any)=>{
+    this.http.getDataFromServer(endpoint,"drugcode",this.selectedDrugCode).subscribe((el:any)=>{
       if(el && el.length > 0){
         this.productDetails = el[0];
     }});
@@ -29,3 +29,14 @@ this.selectedDrugCode = this.route.snapshot.paramMap.get("drugCode");
  
 }
 }
+
+
+
+
+
+
+
+
+
+
+
