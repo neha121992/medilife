@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
@@ -9,9 +9,10 @@ import { HttpService } from 'src/app/core/services/http.service';
   styleUrls: ['./view-product-details.component.scss']
 })
 export class ViewProductDetailsComponent implements OnInit {
-  selectedDrugCode:any="";
-  productDetails:any="";
-constructor(private route:ActivatedRoute, private http:HttpService){
+  selectedDrugCode:string | null;
+  productDetails:any;
+constructor(private route:ActivatedRoute, private http:HttpService, private router:Router){
+
 this.selectedDrugCode = this.route.snapshot.paramMap.get("drugCode");
 }
   ngOnInit(): void {
@@ -19,13 +20,25 @@ this.selectedDrugCode = this.route.snapshot.paramMap.get("drugCode");
   }
 
   getProductDetailsByCategory(){
-     
-    const endpoint = "top-deals";
-    this.http.getDataFromServer(endpoint,"drugcode",this.selectedDrugCode).subscribe((el:any)=>{
-      if(el && el.length > 0){
+     if(this.selectedDrugCode!=null){
+    this.http.getDataFromServer("top-deals","drugCode",this.selectedDrugCode).subscribe((el:any)=>{
+      if(el && el.length === 1){
         this.productDetails = el[0];
-    }});
-    
+        console.log("productDetails", this.productDetails)
+    }
+  }, error=>{
+    console.log(error);
+  })
+
+//   this.http.getDataFromServer("top-deals-by-category/top_deals","drugCode",this.selectedDrugCode).subscribe((el:any)=>{
+//     if(el && el.length === 1){
+//       this.productDetails = el[0];
+//       console.log("productDetails", this.productDetails)
+//   }
+// }, error=>{
+//   console.log(error);
+// })
+  } 
  
 }
 }

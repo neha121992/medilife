@@ -4,10 +4,10 @@
       </div>
 </div>
 
-<form [formGroup]="signInForm" (ngSubmit)="signIn()">
+<form [formGroup]="signInForm">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">User Name</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="userName">
+      <input type="text" class="form-control" id="exampleInputEmail1" formControlName="userName">
       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
     <div class="mb-3">
@@ -18,9 +18,8 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
   </form>
 
   <div class="d-grid gap-2">
-    <button class="btn btn-primary" type="submit">Submit 1</button>
+    <button class="btn btn-primary" (click)="signIn()" type="submit">Submit</button>
   </div>

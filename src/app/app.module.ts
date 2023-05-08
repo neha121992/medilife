@@ -16,6 +16,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { TopDealsByCategoryComponent } from './components/top-deals-by-category/top-deals-by-category.component';
 import { ViewProductDetailsComponent } from './components/view-product-details/view-product-details.component';
 import { TopDealHeaderComponent } from './components/top-deal-header/top-deal-header.component';
+import { CartModule } from './cart/cart.module';
 
 
 
@@ -40,7 +41,8 @@ import { TopDealHeaderComponent } from './components/top-deal-header/top-deal-he
     HttpClientModule,
     FormsModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CartModule
 
 
   ],

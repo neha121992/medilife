@@ -1,0 +1,85 @@
+<div class="container booking-form border ">
+    <h3 class="text-center">Booking details</h3>
+    <form [formGroup]="bookingForm" (ngSubmit)="placeOrder()">
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Whom</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPassword" formControlName="customerName">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Mobile Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPassword" formControlName="mobileNo">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Gender</label>
+            <div class="col-sm-10">
+                <input type="checkbox" name="Male" id="" formControlName="gender">
+                <label class="text-end" class="ms-2 me-5" for="">Male</label>
+                <input type="checkbox" name="Female" id="" formControlName="gender">
+                <label class="text-end" class="ms-2" for="">Female</label>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label" formControlName="dateOfBirth">Date Of
+                Birth</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputPassword">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label" formControlName="emailId">Email Id</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputPassword">
+            </div>
+        </div>
+
+
+
+
+
+        <h4 class="mt-4">Delievery Address: </h4>
+        <div class="row" formGroupName="address">
+            <div class="col-md-6">
+                <label for="id10" class="form-label">Flat/House No.</label>
+                <input type="text" class="form-control" id="id10" formControlName="line1">
+            </div>
+            <div class="col-md-6">
+                <label for="id11" class="form-label">Area</label>
+                <input type="text" class="form-control" id="id11" formControlName="line2">
+            </div>
+            <div class="col-md-6">
+                <label for="id6" class="form-label">City</label>
+                <input type="text" class="form-control" id="id6" formControlName="city">
+            </div>
+            <div class="col-md-6 mt-2">
+                <label for="id7" class="form-label">State</label>
+                <select id="id7" class="dropdown w-100" formControlName="state">
+                    <option value="">Select</option>
+                    <option value="MH">Maharashtra</option>
+                    <option value="UP">UP</option>
+                    <option value="GUJ">Gujrat</option>
+                    <option value="delhi">Delhi</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="id6" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="id6" formControlName="pincode">
+        </div>
+
+        <div class="mb-3 form-check mt-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Agree to terms and conditions</label>
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Book</button>
+        </div>
+    </form>
+</div>

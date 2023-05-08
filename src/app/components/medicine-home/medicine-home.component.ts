@@ -19,13 +19,13 @@ export class MedicineHomeComponent implements OnInit {
 
   }
 ngOnInit(): void {
-}
+} 
 
 
 verifyPincode(){
 // const endpoint = "pin-code-details?"+"pincode="+this.ffff;
-const endpoint = "pin-code-details";
-this.http.getDataFromServer(endpoint,"pincode",this.pinCode).subscribe((el:any)=>{
+// const endpoint = "pin-code-details";
+this.http.getDataFromServer("pin-code-details","pincode",this.pinCode).subscribe((el:any)=>{
   if(el && el.length > 0){
     this.pinCodeDetail = el[0];
     this.displayErrorMessage = false;

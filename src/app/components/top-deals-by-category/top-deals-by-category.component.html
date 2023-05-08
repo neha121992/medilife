@@ -26,7 +26,7 @@
             <div class="card-body" style="height: 162px;">
               <h5 class="card-title card-description fs-6" [title]="slide.description">Card title{{slide.description}}</h5>
               <p class="card-text text-muted">{{topDealsByCategoryData.type}}</p>
-              <p class="card-text">MRP &nbsp; <span class="me-2 text-decoration-line-through" *ngIf="slide.actualPrice!=slide.discountPrice">{{slide.actualPrice}} </span> {{slide.discountPrice}} <button type="button" class="btn btn-primary ms-4 w-50 btn-sm">Add</button></p>
+              <p class="card-text">MRP &nbsp; <span class="me-2 text-decoration-line-through" *ngIf="slide.actualPrice!=slide.discountPrice">{{slide.actualPrice}} </span> {{slide.discountPrice}} <button type="button" class="btn btn-primary ms-4 w-50 btn-sm" (click)="addToCart(item)">Add</button></p>
             </div>
           </div> 
      </div>

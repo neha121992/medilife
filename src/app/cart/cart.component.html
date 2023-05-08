@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6 border">
+            <h6>Cart Items</h6>
+            <!-- <div class="row shadow m-3" *ngFor="let item of finalOrder?.products ; let i =index"> -->
+            <div class="row shadow m-3" *ngFor="let item of cartItems; let i =index">
+                <div class="col-md-8 p-2">
+                    <h6 class="mt-1">{{item.productName || item.description}}</h6>
+                    <p class="cart-text">{{item.brand}}</p>
+                    <p class="cart-text">{{item.type}}</p>
+
+                </div>
+                <div class="col-md-2 text-end p-2">
+                    <p>₹{{item.discountedPrice}}</p>
+                    <p><span><i class="bi bi-plus-circle-fill cursor" (click)="changeQuantity(i,'Increment')"></i></span>{{item.quantity || 1}}<span><i class="bi bi-x-circle cursor" (click)="changeQuantity(i,'Decrement')"></i></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 ms-4 border shadow p-4">
+            <h6 class="fw-semibold">Payment Details</h6>
+            <div class="clearfix">
+                <span class="float-start"> MRP Totals</span>
+                <span class="float-end">₹ {{finalOrder?.totalAmount}} /-*</span>
+            </div>
+           
+            <div class="clearfix">
+                <span class="float-start">Discount</span>
+                <span class="float-end">₹ {{finalOrder?.totalDiscount}} /-*</span>
+            </div>
+            <hr>
+             
+            <div class="clearfix">
+                <span class="cart-total float-start">Amount To Pay ₹ {{finalOrder?.finalAmountToPay}} /-*</span>
+                <span class="float-end bg-primary text-white p-2 cursor" (click)="checkout()">Checkout</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

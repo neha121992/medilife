@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { environment } from 'environments/environment';
+import { SharedService } from './shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,13 @@ import { environment } from 'environments/environment';
 export class HttpService implements OnInit{
   baseUrl:string=environment.baseUrl;
   httpHeaders:HttpHeaders=new HttpHeaders()
-                          .set("Content-type","application/json")
-  constructor(private http:HttpClient) { }
+                          .set("Content-type","application/json");
+  previousUrl: any;
+  constructor(private http:HttpClient, private shared: SharedService) { }
   ngOnInit(): void {
-  }
-  
 
+  }
+ 
   // getDataFromServer(endpoint:string, param:string="",reqP: any ={}){
     // const url = this.baseUrl+endpoint;
     // let hhh = new HttpParams().set("pincode",reqP);
@@ -25,10 +27,18 @@ export class HttpService implements OnInit{
     let hhh = new HttpParams().set(key, value);
     return this.http.get(url,{'headers':this.httpHeaders, params: hhh });
   }
-
+  
   authentication(endpoint: string, userName: string, password: string) {
     const url = this.baseUrl + endpoint;
     const httpQueryParam = new HttpParams().set("userName", userName).set("password", password);
     return this.http.get(url,{'headers':this.httpHeaders, params: httpQueryParam });
   }
-}
+
+  postDataTotheServer(endpoint:string,data:any){
+    const url = this.baseUrl + endpoint;
+    return this.http.post(url ,data,{'headers':this.httpHeaders});
+  }
+
+  
+  }
+

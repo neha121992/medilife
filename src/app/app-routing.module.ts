@@ -15,6 +15,7 @@ const routes: Routes = [
   {path:'top-deals-by-category',component:TopDealsByCategoryComponent},
   {path:'view-product-details/:drugCode',component:ViewProductDetailsComponent},
   {path:'labtest-home', component:LabtestHomeComponent},
+  { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'**', component:PageNotFoundComponent }
 ];

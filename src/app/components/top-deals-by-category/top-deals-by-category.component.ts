@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/cart/cart.service';
 import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
@@ -8,8 +10,8 @@ import { HttpService } from 'src/app/core/services/http.service';
 })
 export class TopDealsByCategoryComponent {
   topDealsByCategoryData:any="";
-constructor(private http:HttpService){
-
+constructor(private http:HttpService, private cart:CartService){
+  
 }
 ngOnInit(){
 this.getTopDealsByCategory();
@@ -22,4 +24,14 @@ this.http.getDataFromServer("top-deals-by-category","","").subscribe((el:any)=>{
   }
 })
 }
+
+addToCart(item: any) {
+  this.cart.addItemToCart(item);
+  // this.shared.emitItem(1)
+}
+
+getTopdealsByCart(){
+  this.cart.getProductsDataFromLocalStorage();
+}
+
 }
